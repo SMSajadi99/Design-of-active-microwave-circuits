@@ -1,0 +1,21 @@
+
+hpeesofsim (*) 631.update0.1 Sep  8 2025, MINT version 5
+    (64-bit windows built: Mon Sep 08, 2025 20:46:19 -0700)
+
+***** Simulation started at Fri Feb 27 15:21:53 2026
+      Running on host: "sajadi"
+      In Directory: "D:\PhD\Term1\Active microwave\Project\Project_wrk\data"
+      Process ID: 12700
+
+Warning detected by hpeesofsim during netlist flattening.
+    Touchstone file parser warning:
+    Line - 297, Column - 36 : expected end-of-line termination before end-of-file
+    File: `D:/PhD/Term1/Active microwave/Project/Data/Spar_BFU730F/BFU730F_2V_17mA_S_N.s2p'.
+
+
+SP SP1[1] <Project_lib:cell_2:schematic1>   freq=(2.5 GHz->3.5 GHz)
+
+
+Resource usage:
+  Total stopwatch time     =     1.29 seconds.
+
