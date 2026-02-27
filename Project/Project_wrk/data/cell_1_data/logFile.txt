@@ -2,10 +2,10 @@
 hpeesofsim (*) 631.update0.1 Sep  8 2025, MINT version 5
     (64-bit windows built: Mon Sep 08, 2025 20:46:19 -0700)
 
-***** Simulation started at Sun Feb 22 23:43:08 2026
+***** Simulation started at Fri Feb 27 13:14:23 2026
       Running on host: "sajadi"
       In Directory: "D:\PhD\Term1\Active microwave\Project\Project_wrk\data"
-      Process ID: 8736
+      Process ID: 27116
 
 Warning detected by hpeesofsim during netlist flattening.
     Touchstone file parser warning:
@@ -13,9 +13,9 @@ Warning detected by hpeesofsim during netlist flattening.
     File: `D:/PhD/Term1/Active microwave/Project/Data/Spar_BFU730F/BFU730F_2V_17mA_S_N.s2p'.
 
 
-SP SP1[1] <Project_lib:cell_1:schematic>   freq=(2.8 GHz->3.1 GHz)
+SP SP1[1] <Project_lib:cell_1:schematic>   freq=(2.5 GHz->3.5 GHz)
 
 
 Resource usage:
-  Total stopwatch time     =     0.63 seconds.
+  Total stopwatch time     =     2.33 seconds.
 
