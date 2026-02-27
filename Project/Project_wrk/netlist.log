@@ -1,12 +1,12 @@
-; Top Design: "Project_lib:cell_1:schematic"
+; Top Design: "Project_lib:cell_2:schematic1"
 ; Netlisted using Hierarchy Policy: "Standard"
 
-Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="Project_lib:cell_1:schematic" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
+Options ResourceUsage=yes UseNutmegFormat=no EnableOptim=no TopDesignName="Project_lib:cell_2:schematic1" DcopOutputNodeVoltages=yes DcopOutputPinCurrents=yes DcopOutputAllSweepPoints=no DcopOutputDcopType=0
 S_Param:SP1 CalcS=yes CalcY=yes CalcZ=yes CalcGroupDelay=yes GroupDelayAperture=1e-4 \
 FreqConversion=no FreqConversionPort=1 StatusLevel=2 CalcNoise=no SortNoise=0 BandwidthForNoise=1.0 Hz DevOpPtLevel=0 SPSS_WSP=yes \
 SweepVar="freq" SweepPlan="SP1_stim" OutputPlan="SP1_Output" 
 
-SweepPlan: SP1_stim Start=2.8 GHz Stop=3.1 GHz Lin=300 
+SweepPlan: SP1_stim Start=2.5 GHz Stop=3.5 GHz Lin=10000 
 
 OutputPlan:SP1_Output \
       Type="Output" \
@@ -17,8 +17,12 @@ OutputPlan:SP1_Output \
 
 #load "python","LinearCollapse"
 Component Module="LinearCollapse" Type="ModelExtractor" NetworkRepresentation=2
-model MSub1 MSUB H=10.0 mil Er=2.2 Mur=1 Cond=4.7E+7 Hu=3.93701e+34 mil T=18 um TanD=0.003 Rough=0 mil DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
+model MSub1 MSUB H=10.0 mil Er=2.2 Mur=1 Cond=4.1E+7 Hu=3.93701e+34 mil T=18 um TanD=0.003 Rough=0 mil DielectricLossModel=1 FreqForEpsrTanD=1.0 GHz LowFreqForTanD=1.0 kHz HighFreqForTanD=1.0 THz RoughnessModel=2 
 #uselib "ckt" , "S2P"
-S2P:SNP1  N__6 N__0 0 File="D:\PhD\Term1\Active microwave\Project\Data\Spar_BFU730F\BFU730F_2V_17mA_S_N.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
-Port:TermG1  N__6 0 Num=1 Z=50 Ohm Noise=yes 
-Port:TermG2  N__0 0 Num=2 Z=50 Ohm Noise=yes 
+S2P:SNP1  N__2 N__3 0 File="D:\PhD\Term1\Active microwave\Project\Data\Spar_BFU730F\BFU730F_2V_17mA_S_N.s2p" Type="touchstone" InterpMode="linear" InterpDom="" ExtrapMode="constant" Temp=27.0 CheckPassivity=0 
+MLIN2:TL1  N__5 N__2 Subst="MSub1" W=0.759784 mm L=9.359520 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLIN2:TL3  N__3 N__6 Subst="MSub1" W=0.759784 mm L=19.576900 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLOC2:TL4  N__6 Subst="MSub1" W=0.759784 mm L=7.362260 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+MLOC2:TL2  N__5 Subst="MSub1" W=0.759784 mm L=9.470110 mm Wall1=1.0E+30 mil Wall2=1.0E+30 mil Mod=1 
+Port:TermG1  N__5 0 Num=1 Z=50 Ohm Noise=yes 
+Port:TermG2  N__6 0 Num=2 Z=50 Ohm Noise=yes 
